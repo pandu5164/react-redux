@@ -1,6 +1,9 @@
 {
   "name": "my-app",
   "version": "0.1.0",
+  "author": "Pavan Kumar Zammalamadaka",
+  "license": "ISC",
+  "description": "This is a basic setup of react application with routes and redux",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
