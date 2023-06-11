@@ -1,14 +1,14 @@
 import {createStore, applyMiddleware, compose} from "redux";
 import {Provider} from "react-redux";
-// import { ConnectedRouter } from "connected-react-router";
+import { ConnectedRouter, routerMiddleware } from "connected-react-router";
 import thunk from "redux-thunk";
 import { createBrowserHistory } from "history";
 import './App.css';
-import CounterReducer from "./store/reducers/CounterReducer";
-// import createRootReducer from "./store/reducers";
-import CounterComponent from "./components/CounterComponent";
+import routes from "./routes";
+import createRootReducer from "./store/reducers";
 
 export const history = createBrowserHistory();
+export const myRouterMiddlwWare = routerMiddleware(history);
 const logAction = store => { // custom function to applyMiddleware - alternate of thunk
   return next => {
     return action => {
@@ -19,20 +19,20 @@ const logAction = store => { // custom function to applyMiddleware - alternate o
   }
 }
 
-const middlwware = [
-  logAction,
-  thunk
+const middlewware = [
+  thunk,
+  myRouterMiddlwWare,
+  logAction
 ];
 
-const store = createStore(CounterReducer, compose(applyMiddleware(...middlwware))); //(createRootReducer(history), applyMiddleware(logAction))
+const store = createStore(createRootReducer(history), {}, compose(applyMiddleware(...middlewware))); //(createRootReducer(history), applyMiddleware(logAction))
 
 function App() {
   return (
     <Provider store={store}>
-      {/* <ConnectedRouter history={history}> */} {/* it is used to {routes} as children */}
-        How to setup redux store in react
-        <CounterComponent />
-      {/* </ConnectedRouter> */}
+      <ConnectedRouter history={history}> {/* it is used to {routes} as children */}
+        {routes}
+      </ConnectedRouter>
     </Provider>
   );
 }

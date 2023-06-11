@@ -1,3 +1,5 @@
+do npm i --force to install node_modules as there are non-compatable versions are availabl in package.json as react v18.0.2 is not stable yet with other common supported latest library versions.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
