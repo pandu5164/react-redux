@@ -21,7 +21,7 @@ const DisplayPage = ({ counterState }) => {
                     {counterState.data.map((item) => (
                         <tr style={{ border: "1px solid" }}>
                             <td style={{ border: "1px solid" }}>{item.id}</td>
-                            <td style={{ border: "1px solid" }}><a href="#" onClick={() => alert(`you'd clicked on ${item.name} with emailId as ${item.email} and postId as ${item.postId}`)}>{item.name}</a></td>
+                            <td style={{ border: "1px solid" }}><a style={{cursor: "pointer", color:"blue"}} onClick={() => alert(`you'd clicked on ${item.name} with emailId as ${item.email} and postId as ${item.postId}`)}>{item.name}</a></td>
                             <td style={{ border: "1px solid" }}>{item.email}</td>
                         </tr>
                     ))}
