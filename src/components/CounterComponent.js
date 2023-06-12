@@ -11,9 +11,9 @@ const CounterComponent = ({ counterState, add, sub, makeApiCall }) => {
         <button onClick={sub}>Sub</button>
         <br />
         <br />
-        <div>
+        {counterState.count > 0 && (<div>
             <button style={{ margin: 10 }} onClick={makeApiCall}>Make api call</button>
-        </div>
+        </div>)}
         <br />
         <div>
             {counterState.loading && <img src={logo} alt="loading..." className="App-logo" />}
