@@ -6,21 +6,23 @@ const DisplayPage = ({ counterState }) => {
     return (<>
         {counterState.count > 0 ? (<div>
             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-            <a style={{color: "blue"}} href="#" onClick={() => window.history.back()}> {"<- Go Back"}</a>
-            <h1>Hai, welcome to display page, {counterState.count}</h1>
+            <a style={{ color: "blue", margin: 10 }} href="#" onClick={() => window.history.back()}> {"<- Go Back"}</a>
+            <h1 style={{ margin: 10 }}>Hai, welcome to display page, {counterState.count}</h1>
             {/* api call data */}
-            {counterState.data.length > 0 && (<table>
+            {counterState.data.length > 0 && (<table style={{ margin: 10, border: "1px solid" }}>
                 <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Email</th>
+                    <tr style={{ border: "1px solid" }}>
+                        <th style={{ border: "1px solid" }}>S.No</th>
+                        <th style={{ border: "1px solid" }}>Name</th>
+                        <th style={{ border: "1px solid" }}>Email</th>
                     </tr>
                 </thead>
                 <tbody>
                     {counterState.data.map((item) => (
-                        <tr>
-                            <td>{item.name}</td>
-                            <td>{item.email}</td>
+                        <tr style={{ border: "1px solid" }}>
+                            <td style={{ border: "1px solid" }}>{item.id}</td>
+                            <td style={{ border: "1px solid" }}><a href="#" onClick={() => alert(`you'd clicked on ${item.name} with emailId as ${item.email} and postId as ${item.postId}`)}>{item.name}</a></td>
+                            <td style={{ border: "1px solid" }}>{item.email}</td>
                         </tr>
                     ))}
                 </tbody>
