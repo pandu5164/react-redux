@@ -1,7 +1,7 @@
-import CounterComponent from "../../../components/CounterComponent";
+import CounterComponent from "../../../components/CounterComponent/CounterComponent";
 
 const CounterContainer = (props = {}) => {
-    return <CounterComponent />;
-}
+  return <CounterComponent />;
+};
 
 export default CounterContainer;
