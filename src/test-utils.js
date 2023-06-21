@@ -22,3 +22,4 @@ export function renderWithProviders(
   // Return an object with the store and all of RTL's query functions
   return { store, ...render(ui, { wrapper: Wrapper, ...renderOptions }) };
 }
+// picked from :- https://www.youtube.com/watch?v=o71kkw9Kjik
