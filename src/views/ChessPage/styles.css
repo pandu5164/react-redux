@@ -1,0 +1,28 @@
+.App {
+    font-family: sans-serif;
+    text-align: center;
+  }
+  .chess-eight-grid .whites {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-color: antiquewhite;
+  }
+  .chess-eight-grid .whites.active,
+  .chess-eight-grid .whites:active,
+  .chess-eight-grid .whites:focus {
+    background-color: red;
+  }
+  .chess-eight-grid .blacks {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-color: #000;
+    color: #fff;
+  }
+  .chess-eight-grid .blacks.active,
+  .chess-eight-grid .blacks:active,
+  .chess-eight-grid .blacks:focus {
+    background-color: red;
+  }
+  

@@ -20,6 +20,13 @@ const CounterComponent = ({ counterState, add, sub, makeApiCall }) => {
       </button>
       <button onClick={sub}>Sub</button>
       <br />
+      <Link
+        style={{ margin: 10 }}
+        to={`/chess`}
+        relative="path"
+      >
+        Chess Page
+      </Link>
       <br />
       {counterState.count > 0 && (
         <div>
