@@ -18,17 +18,15 @@ const CounterComponent = ({ counterState, add, sub, makeApiCall }) => {
       <button style={{ margin: 10 }} onClick={add}>
         Add
       </button>
-      <button onClick={sub}>Sub</button>
+      <button disabled={counterState.count === 0} onClick={sub}>
+        Sub
+      </button>
       <br />
-      <Link
-        style={{ margin: 10 }}
-        to={`/chess`}
-        relative="path"
-      >
+      <Link style={{ margin: 10 }} to={`/chess`} relative="path">
         Chess Page
       </Link>
       <br />
-      {counterState.count > 0 && (
+      {counterState.count > 0 && !counterState.data.length && (
         <div>
           <button style={{ margin: 10 }} onClick={makeApiCall}>
             Make api call
@@ -42,7 +40,7 @@ const CounterComponent = ({ counterState, add, sub, makeApiCall }) => {
         )}
       </div>
       <br />
-      {counterState.data.length > 0 && (
+      {counterState.count > 0 && counterState.data.length > 0 && (
         <Link
           style={{ margin: 10 }}
           to={`/display/${counterState.count}`}
